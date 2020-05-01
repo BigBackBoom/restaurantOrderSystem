@@ -1,0 +1,6 @@
+#include "Generated.xcconfig"
+TRACK_WIDGET_CREATION=
+
+FLUTTER_FLAVOR=Staging
+PRODUCT_BUNDLE_IDENTIFIER=com.letme.flutter.env.stg
+DISPLAY_NAME=SAMPLE-stg

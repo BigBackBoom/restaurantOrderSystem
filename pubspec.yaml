@@ -1,0 +1,31 @@
+name: letme_app
+description: A new Flutter project.
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.2.2 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_state_notifier: 0.4.1
+  freezed_annotation:
+  cupertino_icons: ^0.1.2
+  quiver: ^2.0.5
+  rxdart: ^0.18.0
+  provider: ^4.0.4
+  http: ^0.12.0+4
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  english_words: ^3.1.0
+  freezed:
+
+flutter:
+  uses-material-design: true
+
+
+
+
