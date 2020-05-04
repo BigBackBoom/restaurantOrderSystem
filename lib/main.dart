@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:letme_app/app/letme_app.dart';
-import 'package:letme_app/app/widgets/screens/home/home_page.dart';
-
 import 'package:letme_app/app_config.dart';
-import 'package:letme_app/env/env_config.dart';
-import 'package:letme_app/main.dart';
+import 'package:letme_app/env_resources/env_config.dart';
 
 void main() {
   var configuredApp = new AppConfig(

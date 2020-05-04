@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:letme_app/env/env_config.dart';
+import 'package:letme_app/env_resources/env_config.dart';
 import 'package:meta/meta.dart';
 
 class AppConfig extends InheritedWidget {
