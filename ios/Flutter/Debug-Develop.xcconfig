@@ -1,0 +1,7 @@
+#include "Generated.xcconfig"
+TRACK_WIDGET_CREATION=
+
+FLUTTER_FLAVOR=Develop
+FLUTTER_TARGET=lib/main_dev.dart
+PRODUCT_BUNDLE_IDENTIFIER=com.letme.flutter.env.dev
+DISPLAY_NAME=Letme-dev

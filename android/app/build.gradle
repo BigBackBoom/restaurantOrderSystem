@@ -57,17 +57,17 @@ android {
     flavorDimensions "default"
 
     productFlavors {
-        dev {
+        develop {
             dimension "default"
             applicationIdSuffix ".dev"
             versionNameSuffix ".dev"
         }
-        stg {
+        staging {
             dimension "default"
             applicationIdSuffix ".qa"
             versionNameSuffix ".qa"
         }
-        prod {
+        production {
             dimension "default"
         }
     }
