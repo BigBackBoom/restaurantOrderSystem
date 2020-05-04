@@ -8,9 +8,9 @@ import 'package:letme_app/main.dart';
 
 void main() {
   var configuredApp = new AppConfig(
-    appName: 'Letme',
-    flavorName: 'Production',
-    envConfig: EnvConfig(),
+    appName: 'Letme DEV',
+    flavorName: 'Develop',
+    envConfig: DevelopEnvConfig(),
     child: new LetmeApp(),
   );
 
