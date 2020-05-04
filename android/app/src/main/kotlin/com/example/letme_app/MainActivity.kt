@@ -1,4 +1,4 @@
-package com.example.letme_app
+package com.finfeed.letme_app
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity
