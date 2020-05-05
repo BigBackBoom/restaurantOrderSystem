@@ -39,8 +39,12 @@ class LetmeApp extends StatelessWidget {
               displayColor: LetmeAppColor.onColors["primary"]
           ),
         textTheme: TextTheme(
-          bodyText1: TextStyle(),
-          bodyText2: TextStyle(),
+          bodyText1: TextStyle(
+            fontSize: 14
+          ),
+          bodyText2: TextStyle(
+              fontSize: 14
+          ),
         ).apply(
             bodyColor: LetmeAppColor.onColors["background"],
             displayColor: LetmeAppColor.onColors["background"]
