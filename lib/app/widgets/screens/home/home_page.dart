@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:letme_app/app/theme.dart';
 import 'package:letme_app/app/widgets/screens/home/store_detail/store_detail_page.dart';
 import 'package:letme_app/env_resources/strings/localization_strings.dart';
 
@@ -45,7 +46,7 @@ class _HomePageState extends State<HomePage> {
             title: Text(LocalizationStrings.of(context).getWithKey("home_bottom_nav_my_page")),
           ),
         ],
-
+        activeColor: LetmeAppColor.onColors["background"],
       ),
       tabBuilder: (BuildContext context, int index) {
         CupertinoTabView tabView;
