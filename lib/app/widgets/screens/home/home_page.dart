@@ -20,28 +20,29 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+
     return CupertinoTabScaffold(
       tabBar: CupertinoTabBar(
-        items: const <BottomNavigationBarItem> [
+        items:  <BottomNavigationBarItem> [
           BottomNavigationBarItem(
             icon: Icon(Icons.search),
-            title: Text("Search"),
+            title: Text(LocalizationStrings.of(context).getWithKey("home_bottom_nav_search")),
           ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.rate_review),
-              title: Text("Reviews")
+            icon: Icon(Icons.rate_review),
+            title: Text(LocalizationStrings.of(context).getWithKey("home_bottom_nav_reviews")),
           ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.restaurant),
-              title: Text("I'm at")
+            icon: Icon(Icons.restaurant),
+            title: Text(LocalizationStrings.of(context).getWithKey("home_bottom_nav_im_at")),
           ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.assessment),
-              title: Text("Management")
+            icon: Icon(Icons.assessment),
+            title: Text(LocalizationStrings.of(context).getWithKey("home_bottom_nav_management")),
           ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              title: Text("MyPage")
+            icon: Icon(Icons.person),
+            title: Text(LocalizationStrings.of(context).getWithKey("home_bottom_nav_my_page")),
           ),
         ],
 
