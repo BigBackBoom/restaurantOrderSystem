@@ -26,9 +26,6 @@ class StoreDetailTopHeader extends StatelessWidget {
           child: Text(
             "Cyberpunk/ ¥3000 ~ ¥12000",
             overflow: TextOverflow.ellipsis,
-            style: TextStyle(
-                fontSize: 14,
-                color: Colors.black.withOpacity(0.87)),
           ),
         ),
         Row(
@@ -39,9 +36,6 @@ class StoreDetailTopHeader extends StatelessWidget {
                 child: Text(
                   name,
                   overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                      fontSize: 14,
-                      color: Colors.black.withOpacity(0.87)),
                 ),
               ),
             ),

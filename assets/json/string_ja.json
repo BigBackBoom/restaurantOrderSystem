@@ -1,0 +1,16 @@
+{
+  "home_bottom_nav_search": "検索",
+  "home_bottom_nav_reviews": "レビュー",
+  "home_bottom_nav_im_at": "I'm at",
+  "home_bottom_nav_management": "管理",
+  "home_bottom_nav_my_page": "マイページ",
+
+  "order_detail_tab_top": "トップ",
+  "order_detail_tab_review": "Reviews",
+  "order_detail_tab_menu": "Menu",
+  "order_detail_tab_rules": "Rules",
+  "order_detail_seat_availability_label": "Seat Availability",
+  "order_detail_manner_fee_label": "Manner and Fee Systems",
+  "order_detail_about_label": "About us",
+  "order_detail_check_in_button": "CHECK IN THIS STORE"
+}

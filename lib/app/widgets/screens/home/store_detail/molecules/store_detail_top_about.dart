@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:letme_app/env_resources/strings/localization_strings.dart';
 
 class StoreDetailTopAbout extends StatelessWidget {
 
@@ -14,7 +15,7 @@ class StoreDetailTopAbout extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Text(
-            "About us",
+            LocalizationStrings.of(context).getWithKey("order_detail_about_label"),
             style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 16,
