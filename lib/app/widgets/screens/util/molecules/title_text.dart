@@ -19,7 +19,6 @@ class TitleTextWidget extends StatelessWidget {
               style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 16,
-                  color: Colors.black.withOpacity(0.87)
               )
           ),
         ),
@@ -32,7 +31,6 @@ class TitleTextWidget extends StatelessWidget {
               style: TextStyle(
                   height: 1.5,
                   fontSize: 16,
-                  color: Colors.black.withOpacity(0.87)
               )
           ),
         )

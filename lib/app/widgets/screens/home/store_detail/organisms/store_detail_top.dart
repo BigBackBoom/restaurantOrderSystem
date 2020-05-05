@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:letme_app/app/blocs/home/store_detail/store_detail_bloc.dart';
 import 'package:letme_app/app/resources/models/home/store_detail.dart';
+import 'package:letme_app/app/theme.dart';
 import 'package:letme_app/app/widgets/screens/home/store_detail/molecules/store_detail_top_about.dart';
 import 'package:letme_app/app/widgets/screens/home/store_detail/molecules/store_detail_top_header.dart';
 import 'package:letme_app/app/widgets/screens/util/atoms/round_button.dart';
@@ -101,8 +102,8 @@ class _StoreDetailTopState extends State<StoreDetailTop> {
                     child: SizedBox(
                       width: double.infinity,
                       child: RoundButton(
-                          backgroundColor: Colors.green,
-                          textColor: Colors.white,
+                          textColor: LetmeAppColor.onColors["primary"],
+                          backgroundColor: LetmeAppColor.primary[500],
                           text: LocalizationStrings.of(context).getWithKey("order_detail_check_in_button"),
                           padding: EdgeInsets.only(
                               top: 16,
