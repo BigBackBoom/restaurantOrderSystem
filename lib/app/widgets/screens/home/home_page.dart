@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:letme_app/app/widgets/screens/home/store_detail/store_detail_page.dart';
+import 'package:letme_app/env_resources/strings/localization_strings.dart';
 
 import '../select_language/select_language.dart';
 
@@ -19,6 +20,8 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    LocalizationStrings.of(context).getWithKey("message");
+
     return CupertinoTabScaffold(
       tabBar: CupertinoTabBar(
         items: const <BottomNavigationBarItem> [

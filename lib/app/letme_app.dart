@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:letme_app/app/widgets/screens/home/home_page.dart';
 import 'package:letme_app/app/widgets/screens/select_language/select_language.dart';
+import 'package:letme_app/env_resources/strings/app_localizations_delegate.dart';
 
 class LetmeApp extends StatelessWidget {
   @override
@@ -12,6 +14,15 @@ class LetmeApp extends StatelessWidget {
         '/': (_) => new HomePage(),
         '/select_language': (_) => new SelectLanguage(),
       },
+      localizationsDelegates: [
+        const AppLocalizationsDelegate(),
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ],
+      supportedLocales: [
+        const Locale('en', ''),
+        const Locale('ja', ''),
+      ],
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
