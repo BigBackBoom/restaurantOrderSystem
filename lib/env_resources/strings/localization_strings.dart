@@ -28,4 +28,5 @@ class LocalizationStrings {
   }
 
   String getWithKey(String key) => _localizedValues[locale.languageCode][key];
+
 }

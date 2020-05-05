@@ -19,6 +19,7 @@ class LetmeApp extends StatelessWidget {
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
       ],
+      // 状況に応じて追加。デザインがJP未対応なためひとまず英語オンリー
       supportedLocales: [
         const Locale('en', ''),
         const Locale('ja', ''),

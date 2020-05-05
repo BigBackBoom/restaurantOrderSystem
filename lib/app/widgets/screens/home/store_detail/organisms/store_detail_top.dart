@@ -6,6 +6,7 @@ import 'package:letme_app/app/widgets/screens/home/store_detail/molecules/store_
 import 'package:letme_app/app/widgets/screens/home/store_detail/molecules/store_detail_top_header.dart';
 import 'package:letme_app/app/widgets/screens/util/atoms/round_button.dart';
 import 'package:letme_app/app/widgets/screens/util/molecules/title_text.dart';
+import 'package:letme_app/env_resources/strings/localization_strings.dart';
 import 'package:provider/provider.dart';
 
 class StoreDetailTop extends StatefulWidget {
@@ -58,7 +59,7 @@ class _StoreDetailTopState extends State<StoreDetailTop> {
                                     ),
                                     child: TitleTextWidget(
                                         status: true,
-                                        title: "Seat Availability",
+                                        title: LocalizationStrings.of(context).getWithKey("order_detail_seat_availability_label"),
                                         description: "More thna half vacant"
                                     ),
                                   ),
@@ -74,7 +75,7 @@ class _StoreDetailTopState extends State<StoreDetailTop> {
                                     ),
                                     child: TitleTextWidget(
                                         status: true,
-                                        title: "Manner and Fee Systems",
+                                        title: LocalizationStrings.of(context).getWithKey("order_detail_manner_fee_label"),
                                         description: "1.  The table charge is 300 yen, but one fixed service menu will be served.  This system is very popular in Japan,  called “OTOSHI”. \n2.  Please do not shout, smoke, and tap the table.  Thank you for your cooperation."
                                     ),
                                   ),
@@ -102,7 +103,7 @@ class _StoreDetailTopState extends State<StoreDetailTop> {
                       child: RoundButton(
                           backgroundColor: Colors.green,
                           textColor: Colors.white,
-                          text: "CHECK IN THIS STORE",
+                          text: LocalizationStrings.of(context).getWithKey("order_detail_check_in_button"),
                           padding: EdgeInsets.only(
                               top: 16,
                               bottom: 12

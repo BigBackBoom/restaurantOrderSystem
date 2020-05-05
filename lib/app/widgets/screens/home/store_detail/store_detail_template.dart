@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:letme_app/app/widgets/screens/home/store_detail/organisms/store_detail_top.dart';
+import 'package:letme_app/env_resources/strings/localization_strings.dart';
 
 class StoreDetailTemplate extends StatefulWidget {
   @override
@@ -41,25 +42,25 @@ class _StoreDetailTabState extends State<StoreDetailTab> {
                   Tab(
                     child: Align(
                       alignment: Alignment.center,
-                      child: Text("TOP"),
+                      child: Text(LocalizationStrings.of(context).getWithKey("order_detail_tab_top")),
                     ),
                   ),
                   Tab(
                     child: Align(
                       alignment: Alignment.center,
-                      child: Text("Reviews"),
+                      child: Text(LocalizationStrings.of(context).getWithKey("order_detail_tab_review")),
                     ),
                   ),
                   Tab(
                     child: Align(
                       alignment: Alignment.center,
-                      child: Text("Menu"),
+                      child: Text(LocalizationStrings.of(context).getWithKey("order_detail_tab_menu")),
                     ),
                   ),
                   Tab(
                     child: Align(
                       alignment: Alignment.center,
-                      child: Text("Rules"),
+                      child: Text(LocalizationStrings.of(context).getWithKey("order_detail_tab_rules")),
                     ),
                   ),
                 ])
