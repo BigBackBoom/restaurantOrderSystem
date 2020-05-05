@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:letme_app/app/widgets/screens/home/home_page.dart';
 import 'package:letme_app/app/widgets/screens/select_language/select_language.dart';
 
 import 'package:letme_app/top.dart';
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Letme',
       routes: <String, WidgetBuilder>{
-        '/': (_) => new Top(),
+        '/': (_) => new HomePage(),
         '/select_language': (_) => new SelectLanguage(),
       },
       theme: ThemeData(
