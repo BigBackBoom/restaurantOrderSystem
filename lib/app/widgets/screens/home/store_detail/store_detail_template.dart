@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:letme_app/app/widgets/screens/home/store_detail/organisms/store_detail_top.dart';
+import 'package:letme_app/app/widgets/screens/home/store_detail/store_detail_top/organisms/store_detail_top.dart';
 import 'package:letme_app/env_resources/strings/localization_strings.dart';
 
 class StoreDetailTemplate extends StatefulWidget {
