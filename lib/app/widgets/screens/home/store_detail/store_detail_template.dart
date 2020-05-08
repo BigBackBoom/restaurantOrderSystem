@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:letme_app/app/widgets/screens/home/store_detail/store_detail_menu/organisms/store_detail_menu.dart';
 import 'package:letme_app/app/widgets/screens/home/store_detail/store_detail_top/organisms/store_detail_top.dart';
 import 'package:letme_app/env_resources/strings/localization_strings.dart';
 
@@ -70,7 +71,7 @@ class _StoreDetailTabState extends State<StoreDetailTab> {
           body: TabBarView(children: [
             StoreDetailTop(),
             Icon(Icons.movie),
-            Icon(Icons.games),
+            StoreDetailMenu(),
             Icon(Icons.games),
           ]),
         )
