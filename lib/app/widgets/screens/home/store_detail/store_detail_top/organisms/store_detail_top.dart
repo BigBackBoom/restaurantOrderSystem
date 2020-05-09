@@ -57,7 +57,6 @@ class _StoreDetailTopState extends State<StoreDetailTop> {
                                         top: 16
                                     ),
                                     child: TitleTextWidget(
-                                        status: true,
                                         title: LocalizationStrings.of(context).getWithKey("order_detail_seat_availability_label"),
                                         description: "More thna half vacant"
                                     ),
@@ -73,7 +72,6 @@ class _StoreDetailTopState extends State<StoreDetailTop> {
                                         top: 16
                                     ),
                                     child: TitleTextWidget(
-                                        status: true,
                                         title: LocalizationStrings.of(context).getWithKey("order_detail_manner_fee_label"),
                                         description: "1.  The table charge is 300 yen, but one fixed service menu will be served.  This system is very popular in Japan,  called “OTOSHI”. \n2.  Please do not shout, smoke, and tap the table.  Thank you for your cooperation."
                                     ),

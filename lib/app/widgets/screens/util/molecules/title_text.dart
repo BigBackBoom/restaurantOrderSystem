@@ -2,11 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class TitleTextWidget extends StatelessWidget {
-  final bool status;
   final String title;
   final String description;
 
-  TitleTextWidget({Key key, @required this.status, @required this.title, @required this.description}) : super(key: key);
+  TitleTextWidget({Key key, @required this.title, @required this.description}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

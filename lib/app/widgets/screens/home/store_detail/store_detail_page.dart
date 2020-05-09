@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:letme_app/app/blocs/home/store_detail/store_detail_bloc.dart';
 import 'package:letme_app/app/blocs/home/store_detail/store_detail_menu_bloc.dart';
+import 'package:letme_app/app/blocs/home/store_detail/store_detail_rules_bloc.dart';
 import 'package:letme_app/app/widgets/screens/home/store_detail/store_detail_template.dart';
 import 'package:provider/provider.dart';
 
@@ -19,6 +20,10 @@ class StoreDetailPage extends StatelessWidget {
         ),
         Provider<StoreDetailMenuBloc>(
           create: (context) => StoreDetailMenuBloc(id),
+          dispose: (context, bloc) => bloc.dispose(),
+        ),
+        Provider<StoreDetailRulesBloc>(
+          create: (context) => StoreDetailRulesBloc(id),
           dispose: (context, bloc) => bloc.dispose(),
         ),
       ],
