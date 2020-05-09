@@ -1,6 +1,0 @@
-#include "Generated.xcconfig"
-TRACK_WIDGET_CREATION=
-
-FLUTTER_FLAVOR=Develop
-PRODUCT_BUNDLE_IDENTIFIER=com.letme.flutter.env.dev
-DISPLAY_NAME=SAMPLE-dev
