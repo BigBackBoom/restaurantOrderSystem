@@ -2,10 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:letme_app/app/blocs/home/store_detail/store_detail_bloc.dart';
 import 'package:letme_app/app/resources/models/home/store_detail.dart';
-import 'package:letme_app/app/theme.dart';
 import 'package:letme_app/app/widgets/screens/home/store_detail/store_detail_top/molecules/store_detail_top_about.dart';
 import 'package:letme_app/app/widgets/screens/home/store_detail/store_detail_top/molecules/store_detail_top_header.dart';
-import 'package:letme_app/app/widgets/screens/util/atoms/round_button.dart';
 import 'package:letme_app/app/widgets/screens/util/molecules/title_text.dart';
 import 'package:letme_app/env_resources/strings/localization_strings.dart';
 import 'package:provider/provider.dart';
@@ -87,34 +85,6 @@ class _StoreDetailTopState extends State<StoreDetailTop> {
                         )
                     )
                   ],
-                ),
-              ),
-
-              Positioned(
-                child: Align(
-                  alignment: Alignment.bottomCenter,
-                  child: Container(
-                    margin: EdgeInsets.only(
-                      left: 16,
-                      right: 16,
-                      bottom: 12
-                    ),
-                    child: SizedBox(
-                      width: double.infinity,
-                      child: RoundButton(
-                          textColor: LetmeAppColor.onColors["primary"],
-                          backgroundColor: LetmeAppColor.primary[500],
-                          text: LocalizationStrings.of(context).getWithKey("order_detail_check_in_button"),
-                          padding: EdgeInsets.only(
-                              top: 16,
-                              bottom: 12
-                          ),
-                          onPressedCallback: () {
-
-                          }
-                      ),
-                    ),
-                  ),
                 ),
               ),
             ],
