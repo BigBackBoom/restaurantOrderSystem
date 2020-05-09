@@ -23,7 +23,7 @@ class StoreDetailReviewImageGallery extends StatelessWidget {
       children: <Widget>[
         Expanded(
             child: ImageLoader(
-              height: 84,
+              height: height,
               imgUrl: imageList[0],
               isUsingLoadIndicator: true,
               fit: BoxFit.cover,
@@ -44,7 +44,7 @@ class StoreDetailReviewImageGallery extends StatelessWidget {
                             bottom: 4
                         ),
                         child: ImageLoader(
-                          height: 40,
+                          height: (height - 2) / 2,
                           imgUrl: imageList.length > 1 ? imageList[1] : "",
                           isUsingLoadIndicator: true,
                           fit: BoxFit.cover,
@@ -62,7 +62,7 @@ class StoreDetailReviewImageGallery extends StatelessWidget {
                             bottom: 4
                         ),
                         child: ImageLoader(
-                          height: 40,
+                          height: (height - 2) / 2,
                           imgUrl: imageList.length > 2 ? imageList[2] : "",
                           isUsingLoadIndicator: true,
                           fit: BoxFit.cover,
@@ -84,7 +84,7 @@ class StoreDetailReviewImageGallery extends StatelessWidget {
                             bottom: 4
                         ),
                         child: ImageLoader(
-                          height: 40,
+                          height: (height - 2) / 2,
                           imgUrl: imageList.length > 3 ? imageList[3] : "",
                           isUsingLoadIndicator: true,
                           fit: BoxFit.cover,

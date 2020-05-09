@@ -38,7 +38,7 @@ class ImageLoader extends StatelessWidget {
 
     return Container(
       child: CachedNetworkImage(
-        fit: BoxFit.cover,
+        fit: fit,
         imageUrl: imgUrl,
         height: height,
         width: width,
