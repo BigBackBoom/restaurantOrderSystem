@@ -28,6 +28,8 @@ class LetmeAppColor {
     "surface": const Color(0xDF000000)
   };
 
+  static const border =  Color(0x1F000000);
+
   static const background =  Color(0xFFFFFFFF);
 
   static const surface =  Color(0xFFFFFFFF);

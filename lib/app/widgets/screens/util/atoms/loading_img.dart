@@ -8,8 +8,9 @@ class ImageLoader extends StatelessWidget {
   final bool isUsingLoadIndicator;
   final double width;
   final double height;
+  final BoxFit fit;
 
-  ImageLoader({Key key, @required this.imgUrl, this.width, this.height, this.isUsingLoadIndicator=false}) : super(key: key);
+  ImageLoader({Key key, @required this.imgUrl, this.width, this.height, this.isUsingLoadIndicator=false, this.fit}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -28,19 +29,25 @@ class ImageLoader extends StatelessWidget {
     placeholder.add(
       Align(
         alignment: Alignment.center,
-        child: Image.asset("assets/img/placeholder.png",
-      )
+        child: Image.asset(
+          "assets/img/placeholder.png",
+          width: width,
+          height: height,
+        )
     ));
 
-    return CachedNetworkImage(
-      imageUrl: imgUrl,
-      height: height,
-      width: width,
-      placeholder: (context, url){
-        return Stack(
-          children: placeholder
-        );
-      },
+    return Container(
+      child: CachedNetworkImage(
+        fit: BoxFit.cover,
+        imageUrl: imgUrl,
+        height: height,
+        width: width,
+        placeholder: (context, url){
+          return Stack(
+              children: placeholder
+          );
+        },
+      ),
     );
   }
 }
