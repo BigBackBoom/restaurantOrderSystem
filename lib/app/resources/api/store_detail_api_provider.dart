@@ -1,5 +1,6 @@
 import 'package:letme_app/app/resources/models/home/store_detail.dart';
 import 'package:letme_app/app/resources/models/home/store_menu.dart';
+import 'package:letme_app/app/resources/models/home/store_reviews.dart';
 import 'package:letme_app/app/resources/models/home/store_rules.dart';
 
 class StoreDetailApiProvider {
@@ -61,4 +62,57 @@ class StoreDetailApiProvider {
     return StoreRulesList.fromJson(data);
   }
 
+  Future<StoreReviewList> fetchStoreReviews(int id) async {
+
+    var mock = <String, dynamic> {
+      "title": "very nice place ",
+      "description":"I visited this pub after my work. It was pretty nice place",
+      "user_image": "https://eiga.k-img.com/images/person/34117/300x.jpg",
+      "review_image": [
+        "https://eatforum.org/content/uploads/2018/05/table_with_food_top_view_900x700.jpg",
+        "https://i0.wp.com/images-prod.healthline.com/hlcmsresource/images/AN_images/healthy-eating-ingredients-1296x728-header.jpg?w=1155&h=1528",
+        "https://static01.nyt.com/images/2020/03/03/well/physed-foods/physed-foods-mediumSquareAt3X.jpg",
+        "https://www.diabetes.co.uk/wp-content/uploads/2019/01/iStock-10131071761-1.jpg",
+      ]
+    };
+    var mock2 = <String, dynamic> {
+      "title": "delicious foods",
+      "description":"You are still hesitating to come here? Everthing is nice in here",
+      "user_image": "https://yumeijinhensachi.com/wp-content/uploads/2017/12/06-24.jpg",
+      "review_image": [
+        "https://eatforum.org/content/uploads/2018/05/table_with_food_top_view_900x700.jpg",
+        "https://i0.wp.com/images-prod.healthline.com/hlcmsresource/images/AN_images/healthy-eating-ingredients-1296x728-header.jpg?w=1155&h=1528",
+        "https://static01.nyt.com/images/2020/03/03/well/physed-foods/physed-foods-mediumSquareAt3X.jpg",
+        "https://www.diabetes.co.uk/wp-content/uploads/2019/01/iStock-10131071761-1.jpg",
+        "https://www.diabetes.co.uk/wp-content/uploads/2019/01/iStock-10131071761-1.jpg",
+      ]
+    };
+
+    var mock3 = <String, dynamic> {
+      "title": "eek! it was digusting",
+      "description":"I saw a cockroach. They should close down now",
+      "user_image": "https://pbs.twimg.com/media/D4mB-zpU0AA-dcL.jpg",
+      "review_image": [
+        "https://eatforum.org/content/uploads/2018/05/table_with_food_top_view_900x700.jpg",
+        "https://i0.wp.com/images-prod.healthline.com/hlcmsresource/images/AN_images/healthy-eating-ingredients-1296x728-header.jpg?w=1155&h=1528",
+        "https://static01.nyt.com/images/2020/03/03/well/physed-foods/physed-foods-mediumSquareAt3X.jpg",
+      ]
+    };
+
+    var mock4 = <String, dynamic> {
+      "title": "Wanna come here again",
+      "description":"my all time best restaurant. jus visit here, and you will enjoy.",
+      "user_image": "https://pbs.twimg.com/profile_images/1159786260627709954/lulrLmk3.jpg",
+      "review_image": [
+        "https://eatforum.org/content/uploads/2018/05/table_with_food_top_view_900x700.jpg",
+      ]
+    };
+
+    var list = [mock, mock2, mock3, mock4];
+    var data =  <String, dynamic> {
+      "data":list
+    };
+
+    return StoreReviewList.fromJson(data);
+  }
 }

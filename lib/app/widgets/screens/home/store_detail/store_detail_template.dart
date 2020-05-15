@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:letme_app/app/theme.dart';
 import 'package:letme_app/app/widgets/screens/home/store_detail/store_detail_menu/organisms/store_detail_menu.dart';
+import 'package:letme_app/app/widgets/screens/home/store_detail/store_detail_review/organisms/store_detail_review.dart';
 import 'package:letme_app/app/widgets/screens/home/store_detail/store_detail_rules/organisms/store_detail_rules.dart';
 import 'package:letme_app/app/widgets/screens/home/store_detail/store_detail_top/organisms/store_detail_top.dart';
 import 'package:letme_app/app/widgets/screens/util/atoms/round_button.dart';
@@ -75,7 +76,7 @@ class _StoreDetailTabState extends State<StoreDetailTab> {
             children: <Widget>[
               TabBarView(children: [
                 StoreDetailTop(),
-                Icon(Icons.movie),
+                StoreDetailReview(),
                 StoreDetailMenu(),
                 StoreDetailRules(),
               ]),
