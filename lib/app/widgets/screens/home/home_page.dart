@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:letme_app/app/theme.dart';
-import 'package:letme_app/app/widgets/screens/home/store_detail/store_detail_page.dart';
+import 'package:letme_app/app/widgets/screens/home/search/search_page.dart';
 import 'package:letme_app/env_resources/strings/localization_strings.dart';
 
 import '../select_language/select_language.dart';
@@ -55,9 +55,7 @@ class _HomePageState extends State<HomePage> {
             tabView = CupertinoTabView(
                 builder: (context) {
                   return CupertinoPageScaffold(
-                      child: StoreDetailPage(
-                          id: 1234,
-                      )
+                      child: SearchPage()
                   );
                 });
             break;

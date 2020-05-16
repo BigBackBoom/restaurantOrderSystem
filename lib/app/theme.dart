@@ -19,6 +19,7 @@ class LetmeAppColor {
   LetmeAppColor._();
 
   static const Map<int, Color> primary = const <int, Color>{
+    200: const Color(0xFFE2EEE9),
     500: const Color(0xFF00D379),
   };
 
