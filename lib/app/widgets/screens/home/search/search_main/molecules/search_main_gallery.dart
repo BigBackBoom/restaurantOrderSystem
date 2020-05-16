@@ -67,8 +67,14 @@ class SearchMainGallery extends StatelessWidget {
                               right: 8,
                               bottom: 4
                           ),
-
-                          color: Colors.black54,
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                                begin: Alignment.topCenter,
+                                end: Alignment.bottomCenter,
+                                stops: [0.0, 0.25, 1.0],
+                                colors: [Colors.transparent, Colors.black26, Colors.black38,]
+                            )
+                          ),
                           width: imageWidth,
                           child: Text(
                             imgList[index].title,
