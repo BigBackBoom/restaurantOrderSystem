@@ -7,12 +7,12 @@ import 'package:letme_app/app/widgets/screens/home/store_detail/store_detail_tem
 import 'package:provider/provider.dart';
 
 class StoreDetailPage extends StatelessWidget {
-  final int id;
-
-  StoreDetailPage({Key key, @required this.id}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+
+    final int id = ModalRoute.of(context).settings.arguments;
+
     return MultiProvider(
       providers: [
         Provider<StoreDetailBloc>(

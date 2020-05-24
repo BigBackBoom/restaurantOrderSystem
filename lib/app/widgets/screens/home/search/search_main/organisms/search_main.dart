@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:letme_app/app/blocs/home/search/search_bloc.dart';
 import 'package:letme_app/app/resources/models/home/search_main.dart';
+import 'package:letme_app/app/routes.dart';
 import 'package:letme_app/app/theme.dart';
 import 'package:letme_app/app/widgets/screens/home/search/search_main/molecules/search_main_gallery.dart';
 import 'package:letme_app/app/widgets/screens/home/search/search_main/molecules/search_text_field_dummy.dart';
@@ -60,6 +61,12 @@ class _SearchMainState extends State<SearchMain> {
                         height: 200,
                         width: 328,
                         restaurantList: data.nearByRestaurant.restaurantList,
+                        callback: (id){
+                          Navigator.of(context).pushNamed(
+                            Routes.store,
+                            arguments: id,
+                          );
+                        },
                       )
                   );
 
@@ -71,6 +78,7 @@ class _SearchMainState extends State<SearchMain> {
                         data.restaurantList[i].restaurantList.length; j++) {
                       imageContainer.add(
                           RestaurantImage(
+                              id: data.restaurantList[i].restaurantList[j].id,
                               title: data.restaurantList[i].restaurantList[j]
                                   .title,
                               imgUrl: data.restaurantList[i].restaurantList[j]
@@ -94,6 +102,12 @@ class _SearchMainState extends State<SearchMain> {
                             left: 16,
                             right: 16,
                           ),
+                          callback: (id){
+                            Navigator.of(context).pushNamed(
+                                Routes.store,
+                                arguments: id,
+                            );
+                          },
                         )
                     );
                   }
@@ -120,16 +134,19 @@ class _SearchMainState extends State<SearchMain> {
   }
 }
 
+typedef OnTapCarouselCallback = void Function(int id);
+
 class SearchMainCarousel extends StatelessWidget {
   final double height;
   final double width;
   final List<Restaurant> restaurantList;
+  final OnTapCarouselCallback callback;
 
   SearchMainCarousel({Key key,
     @required this.height,
     @required this.width,
-    @required this.restaurantList})
-      : super(key: key);
+    @required this.restaurantList,
+    this.callback}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -163,90 +180,93 @@ class SearchMainCarousel extends StatelessWidget {
         CarouselSlider.builder(
           itemCount: restaurantList.length,
           itemBuilder: (BuildContext context, int itemIndex) =>
-              Stack(
-                children: <Widget>[
-                  Container(
-                    padding: EdgeInsets.only(
-                      top: 18,
+              GestureDetector(
+                onTap: () => callback(restaurantList[itemIndex].id),
+                child: Stack(
+                  children: <Widget>[
+                    Container(
+                      padding: EdgeInsets.only(
+                        top: 18,
+                      ),
+                      child: ImageLoader(
+                        width: width,
+                        height: height,
+                        imgUrl: restaurantList[itemIndex].imgUrl,
+                        fit: BoxFit.cover,
+                        isUsingLoadIndicator: true,
+                      ),
                     ),
-                    child: ImageLoader(
-                      width: width,
-                      height: height,
-                      imgUrl: restaurantList[itemIndex].imgUrl,
-                      fit: BoxFit.cover,
-                      isUsingLoadIndicator: true,
-                    ),
-                  ),
-                  Positioned(
-                    child: Align(
-                      alignment: Alignment.bottomLeft,
-                      child: Container(
-                        decoration: BoxDecoration(
-                            gradient: LinearGradient(
-                                begin: Alignment.topCenter,
-                                end: Alignment.bottomCenter,
-                                stops: [0.0, 0.25, 1.0],
-                                colors: [Colors.transparent, Colors.black26, Colors.black38,]
-                            )
-                        ),
+                    Positioned(
+                      child: Align(
+                        alignment: Alignment.bottomLeft,
                         child: Container(
-                          padding: EdgeInsets.only(
-                            left: 12,
-                            right: 12
+                          decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                  begin: Alignment.topCenter,
+                                  end: Alignment.bottomCenter,
+                                  stops: [0.0, 0.25, 1.0],
+                                  colors: [Colors.transparent, Colors.black26, Colors.black38,]
+                              )
                           ),
-                          height: 96,
-                          child: Row(
-                            children: <Widget>[
-                              Expanded(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  children: <Widget>[
-                                    Container(
-                                      margin: EdgeInsets.only(
-                                          top: 8,
-                                          bottom: 8
-                                      ),
-                                      child: Text(
-                                        restaurantList[itemIndex].title,
-                                        style: TextStyle(
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.bold,
-                                            color: LetmeAppColor.onColors["primary"]
-                                        ),
-                                        maxLines: 2,
-                                        overflow: TextOverflow.ellipsis,
-                                      ),
-                                    ),
-                                    Visibility(
-                                      visible: restaurantList[itemIndex].title.isEmpty, // FIXME 値段などのこうもくをAPIが出来上がったら入力
-                                      child: Container(
+                          child: Container(
+                            padding: EdgeInsets.only(
+                                left: 12,
+                                right: 12
+                            ),
+                            height: 96,
+                            child: Row(
+                              children: <Widget>[
+                                Expanded(
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: <Widget>[
+                                      Container(
                                         margin: EdgeInsets.only(
-                                            top: 4,
+                                            top: 8,
                                             bottom: 8
                                         ),
-                                        child:  Text(
-                                          restaurantList[itemIndex].title, // FIXME 値段などのこうもくをAPIが出来上がったら入力
+                                        child: Text(
+                                          restaurantList[itemIndex].title,
                                           style: TextStyle(
-                                              fontSize: 12,
+                                              fontSize: 20,
                                               fontWeight: FontWeight.bold,
                                               color: LetmeAppColor.onColors["primary"]
                                           ),
-                                          maxLines: 1,
+                                          maxLines: 2,
                                           overflow: TextOverflow.ellipsis,
                                         ),
                                       ),
-                                    ),
-                                  ],
-                                ),
-                              )
-                            ],
+                                      Visibility(
+                                        visible: restaurantList[itemIndex].title.isEmpty, // FIXME 値段などのこうもくをAPIが出来上がったら入力
+                                        child: Container(
+                                          margin: EdgeInsets.only(
+                                              top: 4,
+                                              bottom: 8
+                                          ),
+                                          child:  Text(
+                                            restaurantList[itemIndex].title, // FIXME 値段などのこうもくをAPIが出来上がったら入力
+                                            style: TextStyle(
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.bold,
+                                                color: LetmeAppColor.onColors["primary"]
+                                            ),
+                                            maxLines: 1,
+                                            overflow: TextOverflow.ellipsis,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ),
                           ),
                         ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
           options: CarouselOptions(
             viewportFraction: 0.8,

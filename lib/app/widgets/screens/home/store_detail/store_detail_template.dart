@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:letme_app/app/blocs/home/store_detail/store_detail_bloc.dart';
+import 'package:letme_app/app/resources/models/home/store_detail.dart';
 import 'package:letme_app/app/theme.dart';
 import 'package:letme_app/app/widgets/screens/home/store_detail/store_detail_menu/organisms/store_detail_menu.dart';
 import 'package:letme_app/app/widgets/screens/home/store_detail/store_detail_review/organisms/store_detail_review.dart';
@@ -7,6 +9,7 @@ import 'package:letme_app/app/widgets/screens/home/store_detail/store_detail_rul
 import 'package:letme_app/app/widgets/screens/home/store_detail/store_detail_top/organisms/store_detail_top.dart';
 import 'package:letme_app/app/widgets/screens/util/atoms/round_button.dart';
 import 'package:letme_app/env_resources/strings/localization_strings.dart';
+import 'package:provider/provider.dart';
 
 class StoreDetailTemplate extends StatefulWidget {
   @override
@@ -32,45 +35,54 @@ class StoreDetailTab extends StatefulWidget {
 class _StoreDetailTabState extends State<StoreDetailTab> {
 
   static const int TAB_SIZE = 4;
+  StoreDetailBloc _bloc;
 
   @override
   Widget build(BuildContext context) {
+    _bloc = Provider.of<StoreDetailBloc>(context);
+
     return DefaultTabController(
         length: TAB_SIZE,
         child: Scaffold(
           appBar: AppBar(
-            elevation: 0,
-            flexibleSpace: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: <Widget>[
-                TabBar(indicatorSize: TabBarIndicatorSize.label, tabs: [
-                  Tab(
-                    child: Align(
-                      alignment: Alignment.center,
-                      child: Text(LocalizationStrings.of(context).getWithKey("order_detail_tab_top")),
-                    ),
-                  ),
-                  Tab(
-                    child: Align(
-                      alignment: Alignment.center,
-                      child: Text(LocalizationStrings.of(context).getWithKey("order_detail_tab_review")),
-                    ),
-                  ),
-                  Tab(
-                    child: Align(
-                      alignment: Alignment.center,
-                      child: Text(LocalizationStrings.of(context).getWithKey("order_detail_tab_menu")),
-                    ),
-                  ),
-                  Tab(
-                    child: Align(
-                      alignment: Alignment.center,
-                      child: Text(LocalizationStrings.of(context).getWithKey("order_detail_tab_rules")),
-                    ),
-                  ),
-                ])
-              ],
+            title: StreamBuilder(
+              stream: _bloc.storeDetail,
+              builder: (context, snapshot){
+                if(snapshot.hasData) {
+                  StoreDetail store = snapshot.data;
+                  return Text(store.name);
+                } else {
+                  return Text("");
+                }
+              },
             ),
+            elevation: 0,
+            bottom: TabBar(indicatorSize: TabBarIndicatorSize.label, tabs: [
+              Tab(
+                child: Align(
+                  alignment: Alignment.center,
+                  child: Text(LocalizationStrings.of(context).getWithKey("order_detail_tab_top")),
+                ),
+              ),
+              Tab(
+                child: Align(
+                  alignment: Alignment.center,
+                  child: Text(LocalizationStrings.of(context).getWithKey("order_detail_tab_review")),
+                ),
+              ),
+              Tab(
+                child: Align(
+                  alignment: Alignment.center,
+                  child: Text(LocalizationStrings.of(context).getWithKey("order_detail_tab_menu")),
+                ),
+              ),
+              Tab(
+                child: Align(
+                  alignment: Alignment.center,
+                  child: Text(LocalizationStrings.of(context).getWithKey("order_detail_tab_rules")),
+                ),
+              ),
+            ]),
           ),
           body: Stack(
             children: <Widget>[
