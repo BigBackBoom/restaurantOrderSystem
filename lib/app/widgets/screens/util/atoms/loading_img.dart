@@ -37,16 +37,19 @@ class ImageLoader extends StatelessWidget {
     ));
 
     return Container(
-      child: CachedNetworkImage(
-        fit: fit,
-        imageUrl: imgUrl,
-        height: height,
-        width: width,
-        placeholder: (context, url){
-          return Stack(
-              children: placeholder
-          );
-        },
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(4.0),
+        child:  CachedNetworkImage(
+          fit: fit,
+          imageUrl: imgUrl,
+          height: height,
+          width: width,
+          placeholder: (context, url){
+            return Stack(
+                children: placeholder
+            );
+          },
+        ),
       ),
     );
   }
