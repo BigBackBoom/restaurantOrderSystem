@@ -3,6 +3,8 @@
   "home_search_near_location_title": "Near your location",
   "home_search_dummy_hint": "検索",
 
+  "error_dialog_title": "エラー",
+
   "home_bottom_nav_search": "検索",
   "home_bottom_nav_reviews": "レビュー",
   "home_bottom_nav_im_at": "I'm at",

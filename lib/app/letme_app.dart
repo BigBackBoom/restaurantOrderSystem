@@ -4,6 +4,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:letme_app/app/routes.dart';
 import 'package:letme_app/app/theme.dart';
 import 'package:letme_app/app/widgets/screens/home/home_page.dart';
+import 'package:letme_app/app/widgets/screens/splash.dart';
 import 'package:letme_app/env_resources/strings/app_localizations_delegate.dart';
 
 class LetmeApp extends StatelessWidget {
@@ -12,6 +13,7 @@ class LetmeApp extends StatelessWidget {
     return MaterialApp(
         title: 'Letme',
         routes: <String, WidgetBuilder>{
+          Routes.splash: (_) => LetmeSplash(),
           Routes.home: (_) => new HomePage(),
         },
         onGenerateRoute: (RouteSettings settings) {

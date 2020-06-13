@@ -1,7 +1,10 @@
+import 'dart:async';
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:letme_app/app/blocs/home/search/search_bloc.dart';
+import 'package:letme_app/app/resources/models/error.dart';
 import 'package:letme_app/app/resources/models/home/search_main.dart';
 import 'package:letme_app/app/routes.dart';
 import 'package:letme_app/app/theme.dart';
@@ -18,10 +21,17 @@ class SearchMain extends StatefulWidget {
 
 class _SearchMainState extends State<SearchMain> {
   SearchBloc _bloc;
+  StreamSubscription<Error> errorSub;
 
   @override
   Widget build(BuildContext context) {
     _bloc = Provider.of<SearchBloc>(context);
+
+    // initialize error dialog
+    errorSub?.cancel();
+    errorSub = _bloc.error.listen((error) {
+      _showErrorDialog(error);
+    });
 
     return SingleChildScrollView(
       child: Column(
@@ -132,6 +142,26 @@ class _SearchMainState extends State<SearchMain> {
       ),
     );
   }
+
+  Future _showErrorDialog(Error error) async {
+     showDialog(
+      context: context,
+      barrierDismissible: true,
+      builder: (BuildContext context) => new AlertDialog(
+        title: new Text(LocalizationStrings.of(context).getWithKey("error_dialog_title")),
+        content: new Text(error.message),
+        actions: <Widget>[
+          new SimpleDialogOption(
+            child: new Text('OK'),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
+        ],
+      ),
+    );
+  }
+
 }
 
 typedef OnTapCarouselCallback = void Function(int id);
